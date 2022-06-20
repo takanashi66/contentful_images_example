@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="common/css/style.css">
+    <link rel="icon" href="" type="image/png">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="wrap">
+        <ul>
+            <li>画像表示</li>
+            <li>解像度ごと</li>
+            <li>レスポンシブ画像(アートディレクション)</li>
+            <li>解像度ごとレスポンシブ画像(アートディレクション)</li>
+            <li>webp対応非対応</li>
+            <li>avif対応非対応webp対応非対応</li>
+            <li>avif対応非対応webp対応非対応かつ解像度ごとレスポンシブ画像(アートディレクション)</li>
+        </ul>
+        
+        <h1>画像表示</h1>
+        <img src="https://placehold.jp/3d4070/ffffff/500x500.png?text=png" alt="代替テキスト" width="500" height="500">
+        
+        <h1>解像度ごと</h1>
+        <picture>
+            <source srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=1x 1x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=2x 2x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=3x 3x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=4x 4x">
+            <img src="https://placehold.jp/3d4070/ffffff/500x500.png?text=IE" alt="画像テスト" width="500" height="500">
+        </picture>
+        
+        <h1>レスポンシブ画像(アートディレクション)</h1>
+        <picture>
+            <source media="(max-width: 375px)" srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=sp375以下"> <!-- 0~375 最大値が375 SP用 -->
+            <source media="(max-width: 1194px)" srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=tab1194以下"> <!-- 376~1194 最大値が1194 TB用 -->
+            <img src="https://placehold.jp/3d4070/ffffff/500x500.png?text=PC" alt="画像テスト" width="500" height="500"> <!-- 1195~ 上記2つ以外 PC用 -->
+        </picture>
+        
+        <h1>解像度ごとレスポンシブ画像(アートディレクション)</h1>
+        <picture>
+            <source media="(max-width: 375px)" srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=375_1x 1x,
+                                                       https://placehold.jp/3d4070/ffffff/500x500.png?text=375_2x 2x,
+                                                       https://placehold.jp/3d4070/ffffff/500x500.png?text=375_3x 3x,
+                                                       https://placehold.jp/3d4070/ffffff/500x500.png?text=375_4x 4x">
+            <source media="(max-width: 1194px)" srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_1x 1x,
+                                                        https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_2x 2x,
+                                                        https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_3x 3x,
+                                                        https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_4x 4x">
+            <source media="(min-width: 1195px)" srcset="https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_1x 1x,
+                                                        https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_2x 2x,
+                                                        https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_3x 3x,
+                                                        https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_4x 4x">
+            <img src="https://placehold.jp/3d4070/ffffff/500x500.png?text=IE" alt="画像テスト" width="500" height="500">
+        </picture>
+        
+        <h1>webp対応非対応</h1>
+        <picture>
+            <source type="image/webp" srcset="img.webp">
+            <img src="img.jpg" alt="画像テスト" width="500" height="500">
+        </picture>
+        
+        <h1>avif対応非対応webp対応非対応</h1>
+        <picture>
+            <source type="image/avif" srcset="img.avif">
+            <source type="image/webp" srcset="img.webp">
+            <img src="img.jpg" alt="画像テスト" width="500" height="500">
+        </picture>
+        
+        <h1>avif対応非対応webp対応非対応かつ解像度ごとレスポンシブ画像(アートディレクション)</h1>
+        <picture>
+            <!-- ~375 -->
+            <source media="(max-width: 375px)"
+                    type="image/avif"
+                    srcset="img_375_1x.avif 1x,
+                            img_375_2x.avif 2x,
+                            img_375_3x.avif 3x,
+                            img_375_4x.avif 4x">
+            <source media="(max-width: 375px)"
+                    type="image/webp"
+                    srcset="img_375_1x.webp 1x,
+                            img_375_2x.webp 2x,
+                            img_375_3x.webp 3x,
+                            img_375_4x.webp 4x">
+            <source media="(max-width: 375px)"
+                    srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=375_1x 1x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=375_2x 2x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=375_3x 3x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=375_4x 4x">
+            <!-- 376~1194 -->
+            <source media="(max-width: 1194px)"
+                    type="image/avif"
+                    srcset="img_1194_1x.avif 1x,
+                            img_1194_2x.avif 2x,
+                            img_1194_3x.avif 3x,
+                            img_1194_4x.avif 4x">
+            <source media="(max-width: 1194px)"
+                    type="image/webp"
+                    srcset="img_1194_1x.webp 1x,
+                            img_1194_2x.webp 2x,
+                            img_1194_3x.webp 3x,
+                            img_1194_4x.webp 4x">
+            <source media="(max-width: 1194px)"
+                    srcset="https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_1x 1x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_2x 2x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_3x 3x,
+                            https://placehold.jp/3d4070/ffffff/500x500.png?text=1194_4x 4x">
+            <!-- 1195~ -->
+            <source media="(min-width: 1195px)"
+                    type="image/avif"
+                    srcset="img_1195_1x.avif 1x,
+                            img_1195_2x.avif 2x,
+                            img_1195_3x.avif 3x,
+                            img_1195_4x.avif 4x">
+            <source media="(min-width: 1195px)"
+                    type="image/webp"
+                    srcset="img_1195_1x.webp 1x,
+                            img_1195_2x.webp 2x,
+                            img_1195_3x.webp 3x,
+                            img_1195_4x.webp 4x">
+            <source media="(min-width: 1195px)"
+                    srcset="https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_1x 1x,
+                            https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_2x 2x,
+                            https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_3x 3x,
+                            https://placehold.jp/3d4070/ff0000/500x500.png?text=1195_4x 4x">
+            <img src="https://placehold.jp/3d4070/ffffff/500x500.png?text=IE" alt="画像テスト" width="500" height="500">
+        </picture>
+    </div>
+    
+</body>
+</html>
